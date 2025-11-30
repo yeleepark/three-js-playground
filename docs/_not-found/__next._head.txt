@@ -1,0 +1,8 @@
+1:"$Sreact.fragment"
+2:I[97367,["/three-js-playground/_next/static/chunks/ff1a16fafef87110.js","/three-js-playground/_next/static/chunks/247eb132b7f7b574.js"],"ViewportBoundary"]
+4:I[97367,["/three-js-playground/_next/static/chunks/ff1a16fafef87110.js","/three-js-playground/_next/static/chunks/247eb132b7f7b574.js"],"MetadataBoundary"]
+5:"$Sreact.suspense"
+7:I[27201,["/three-js-playground/_next/static/chunks/ff1a16fafef87110.js","/three-js-playground/_next/static/chunks/247eb132b7f7b574.js"],"IconMark"]
+0:{"buildId":"JJcnIb4CwbtbN8kpxirgn","rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
+3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+6:[["$","title","0",{"children":"Three Experiments"}],["$","meta","1",{"name":"description","content":"Next.js + React Three Fiber 연습 플레이그라운드"}],["$","link","2",{"rel":"icon","href":"/three-js-playground/icon.svg?icon.dec5d9f5.svg","sizes":"any","type":"image/svg+xml"}],["$","$L7","3",{}]]

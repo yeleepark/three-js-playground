@@ -1,11 +1,11 @@
 import type { NextConfig } from "next";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: process.env.NEXT_PUBLIC_BASE_PATH || undefined,
-  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH
-    ? `${process.env.NEXT_PUBLIC_BASE_PATH}/`
-    : undefined,
+  basePath: basePath || undefined,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
   images: {
     unoptimized: true,
   },

@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "export": "next build && next export",
-    "export:gh": "NEXT_PUBLIC_BASE_PATH=/three-js-playground next build && NEXT_PUBLIC_BASE_PATH=/three-js-playground next export"
+    "export": "next build",
+    "export:gh": "NEXT_PUBLIC_BASE_PATH=/three-js-playground next build",
+    "deploy:gh": "rm -rf docs && yarn export:gh && mv out docs && touch docs/.nojekyll"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

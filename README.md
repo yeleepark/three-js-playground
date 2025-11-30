@@ -29,18 +29,18 @@ yarn dev
 ## GitHub Pages 배포 (정적 익스포트)
 
 ```bash
-# 1) 정적 자산 생성
-yarn export:gh
+# 정적 자산 생성 + docs 갱신 + .nojekyll 작성
+yarn deploy:gh
 
-# 2) out/ 디렉터리를 docs/로 옮기거나 gh-pages 브랜치로 복사한 뒤 커밋/푸시
-cp -R out docs
+# docs 폴더를 커밋/푸시하면 GitHub Pages(main/docs)에서 바로 반영
 git add docs
 git commit -m "docs: update gh-pages export"
 git push
 ```
 
-`yarn export:gh` 스크립트는 자동으로 `NEXT_PUBLIC_BASE_PATH=/three-js-playground` 를 주입해 GitHub Pages 경로에 맞춘 정적 자산을 생성합니다.  
-로컬 개발 중에는 기본 URL(`/`)을 사용하므로 별도 환경 변수를 줄 필요가 없습니다.
+- `deploy:gh` 스크립트는 내부적으로 `NEXT_PUBLIC_BASE_PATH=/three-js-playground` 값을 넣어 `next build`/`next export`를 실행한 뒤, 결과물을 `docs/`로 이동하고 `.nojekyll` 파일까지 생성합니다.  
+- 로컬 개발(`yarn dev`)에서는 환경 변수를 주지 않으므로 기본 URL(`/`)로 실행됩니다.  
+- GitHub Pages 설정에서 **Source: main branch / docs folder** 를 선택하세요.
 
 ## 디렉터리 가이드
 
