@@ -1,64 +1,33 @@
-import Image from "next/image";
+import ThreeCanvasWrapper from "@/components/ThreeCanvasWrapper";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="flex min-h-screen items-center justify-center bg-slate-950/95 px-6 py-16 text-white">
+      <main className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 md:grid-cols-2">
+        <section className="flex flex-col gap-6">
+          <p className="text-sm uppercase tracking-[0.3em] text-slate-400">
+            Three.js Playground
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          <h1 className="text-4xl font-semibold leading-tight text-white md:text-5xl">
+            Next.js + React Three Fiber 조합으로
+            <span className="text-sky-400"> 실시간 WebGL</span>을 연습하세요.
+          </h1>
+          <p className="text-base leading-7 text-slate-300">
+            App Router의 사전 렌더링과 캐싱을 활용하면 UI는 서버에서 빠르게
+            준비되고, WebGL 전용 컴포넌트는 브라우저에서만 동작하도록
+            분리해 안정적으로 Three.js를 다룰 수 있습니다. 아래 예제를 수정해
+            자신만의 실험실을 만들어보세요.
+          </p>
+          <div className="rounded-3xl border border-white/10 bg-slate-900/50 p-6 text-sm text-slate-200">
+            <p className="font-medium text-white">추천 워크플로</p>
+            <ul className="mt-3 space-y-2 text-slate-300">
+              <li>· `src/components`에 캔버스를 클라이언트 컴포넌트로 작성</li>
+              <li>· `next/dynamic` + `ssr: false`로 WebGL 전용 코드를 지연 로드</li>
+              <li>· Leva 패널로 조작값을 만들고 실험 이력을 기록</li>
+            </ul>
+          </div>
+        </section>
+        <ThreeCanvasWrapper />
       </main>
     </div>
   );
