@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "export": "next build && next export",
+    "export:gh": "NEXT_PUBLIC_BASE_PATH=/three-js-playground next build && NEXT_PUBLIC_BASE_PATH=/three-js-playground next export"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.7",

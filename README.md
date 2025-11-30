@@ -26,6 +26,22 @@ yarn dev
 브라우저에서 [http://localhost:3000](http://localhost:3000)을 열면 네비게이션 페이지가 나타납니다.  
 크리스마스 트리 씬으로 들어가려면 "크리스마스 트리" 카드를 클릭하거나 [http://localhost:3000/christmas-tree](http://localhost:3000/christmas-tree) 로 직접 이동하세요.
 
+## GitHub Pages 배포 (정적 익스포트)
+
+```bash
+# 1) 정적 자산 생성
+yarn export:gh
+
+# 2) out/ 디렉터리를 docs/로 옮기거나 gh-pages 브랜치로 복사한 뒤 커밋/푸시
+cp -R out docs
+git add docs
+git commit -m "docs: update gh-pages export"
+git push
+```
+
+`yarn export:gh` 스크립트는 자동으로 `NEXT_PUBLIC_BASE_PATH=/three-js-playground` 를 주입해 GitHub Pages 경로에 맞춘 정적 자산을 생성합니다.  
+로컬 개발 중에는 기본 URL(`/`)을 사용하므로 별도 환경 변수를 줄 필요가 없습니다.
+
 ## 디렉터리 가이드
 
 - `src/components/ThreePlayground.tsx` – 공통 캔버스 씬. 조명, 카메라, 눈 파티클 등 공용 요소가 정의됩니다.

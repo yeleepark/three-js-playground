@@ -1,11 +1,11 @@
 import type { NextConfig } from "next";
 
-const repoName = "three-js-playground";
-
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: `/${repoName}`,
-  assetPrefix: `/${repoName}/`,
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || undefined,
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH
+    ? `${process.env.NEXT_PUBLIC_BASE_PATH}/`
+    : undefined,
   images: {
     unoptimized: true,
   },
