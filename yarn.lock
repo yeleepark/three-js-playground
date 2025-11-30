@@ -5149,9 +5149,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"three-experiments@workspace:.":
+"three-js-playground@workspace:.":
   version: 0.0.0-use.local
-  resolution: "three-experiments@workspace:."
+  resolution: "three-js-playground@workspace:."
   dependencies:
     "@react-three/drei": "npm:^10.7.7"
     "@react-three/fiber": "npm:^9.4.2"
