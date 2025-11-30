@@ -1,34 +1,41 @@
-import ThreeCanvasWrapper from "@/components/ThreeCanvasWrapper";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-950/95 px-6 py-16 text-white">
-      <main className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 md:grid-cols-2">
-        <section className="flex flex-col gap-6">
-          <p className="text-sm uppercase tracking-[0.3em] text-slate-400">
-            Three.js Playground
+    <div className="min-h-screen w-full bg-slate-950 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 px-6 py-16 text-white">
+      <div className="mx-auto flex w-full max-w-4xl flex-col gap-6 text-center">
+        <p className="text-sm uppercase tracking-[0.35em] text-slate-400">
+          Three.js Playground
+        </p>
+        <h1 className="text-4xl font-semibold leading-tight text-white md:text-5xl">
+          실험하고 싶은 장면을 고르세요
+        </h1>
+        <p className="text-base leading-7 text-slate-300">
+          각각의 페이지는 독립적인 Three.js 실험장입니다. 원하는 씬을 고르면 즉시
+          해당 데모로 이동합니다.
+        </p>
+      </div>
+
+      <nav className="mx-auto mt-12 grid w-full max-w-4xl gap-6 md:grid-cols-2">
+        <Link
+          href="/christmas-tree"
+          className="rounded-3xl border border-white/10 bg-slate-900/60 px-8 py-10 text-left transition hover:border-slate-200/40 hover:bg-slate-900/80"
+        >
+          <p className="text-sm uppercase tracking-[0.35em] text-slate-400">
+            Scene #1
           </p>
-          <h1 className="text-4xl font-semibold leading-tight text-white md:text-5xl">
-            Next.js + React Three Fiber 조합으로
-            <span className="text-sky-400"> 실시간 WebGL</span>을 연습하세요.
-          </h1>
-          <p className="text-base leading-7 text-slate-300">
-            App Router의 사전 렌더링과 캐싱을 활용하면 UI는 서버에서 빠르게
-            준비되고, WebGL 전용 컴포넌트는 브라우저에서만 동작하도록
-            분리해 안정적으로 Three.js를 다룰 수 있습니다. 아래 예제를 수정해
-            자신만의 실험실을 만들어보세요.
+          <h2 className="mt-3 text-2xl font-semibold text-white">
+            크리스마스 트리
+          </h2>
+          <p className="mt-2 text-sm text-slate-300">
+            React Three Fiber로 구현한 눈 내리는 트리. 카메라와 조명을 조절하면서
+            토이 라이팅을 연습해보세요.
           </p>
-          <div className="rounded-3xl border border-white/10 bg-slate-900/50 p-6 text-sm text-slate-200">
-            <p className="font-medium text-white">추천 워크플로</p>
-            <ul className="mt-3 space-y-2 text-slate-300">
-              <li>· `src/components`에 캔버스를 클라이언트 컴포넌트로 작성</li>
-              <li>· `next/dynamic` + `ssr: false`로 WebGL 전용 코드를 지연 로드</li>
-              <li>· Leva 패널로 조작값을 만들고 실험 이력을 기록</li>
-            </ul>
-          </div>
-        </section>
-        <ThreeCanvasWrapper />
-      </main>
+          <span className="mt-6 inline-flex items-center text-sm font-medium text-sky-300">
+            페이지 열기 →
+          </span>
+        </Link>
+      </nav>
     </div>
   );
 }
